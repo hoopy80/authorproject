@@ -22,7 +22,7 @@ pipeline
 			{
 				echo 'This is Test part'
 			
-				sh 'python3 proj.py'
+				sh 'sudo docker build . -t magyster/app_pete:1'
 			}
 		}
 	stage('Admin Approval') 
