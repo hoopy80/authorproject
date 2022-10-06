@@ -1,17 +1,26 @@
-pipeline{
-        agent any
-        stages{
-            stage('Make directory')
+pipeline 
+{
+    agent none
+    stages 
+	{
+        stage('Build Stage')
 		{
-                steps{
-                    sh "mkdir ~/authorproject-test"
-                }
-            }
-            stage('Make Files'){
-		    
-                steps{
-                    sh "touch ~/authorproject-test/file1 ~/authorproject-test/file2"
-                }
-            }
-        }
-}
+           		agent any
+            		steps 
+			{
+				echo 'This is Build part'
+			
+				sh 'proj.py'
+				
+            		}
+            	
+        	}
+        stage('Test Stage')
+		{
+			agent any
+			steps
+			{
+				echo 'This is Test part'
+			
+				sh 'proj.py'
+			}
