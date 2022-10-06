@@ -10,7 +10,7 @@ pipeline
 			{
 				echo 'This is Build part'
 			
-				sh 'python3 proj.py'
+				sh 'sudo docker build . -t magyster/app_pete:1'
 				
             		}
             	
