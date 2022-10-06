@@ -10,7 +10,7 @@ pipeline
 			{
 				echo 'This is Build part'
 			
-				sh 'sudo docker build . -t magyster/app_pete:1'
+				sh 'docker build . -t magyster/app_pete:1'
 				
             		}
             	
@@ -22,7 +22,7 @@ pipeline
 			{
 				echo 'This is Test part'
 			
-				sh 'sudo docker build . -t magyster/app_pete:1'
+				sh 'docker build . -t magyster/app_pete:1'
 			}
 		}
 	stage('Admin Approval') 
