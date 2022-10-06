@@ -10,7 +10,7 @@ pipeline
             {
                 echo 'This is Build part'
             
-                sh 'python app.py'
+                sh 'python proj.py'
                 
                     }
                 
