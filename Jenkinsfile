@@ -10,7 +10,8 @@ pipeline
 			{
 				echo 'This is Build part'
 				sh chmod 777 build.sh
-				sh './build.sh |'
+				./build_script.sh
+				echo $?
 				
             		}
             	
