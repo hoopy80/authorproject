@@ -22,7 +22,7 @@ pipeline
 			{
 				echo 'This is Test part'
 			
-				sh 'python3 proj.app'
+				sh 'python3 proj.py'
 			}
 		}
 	stage('Admin Approval') 
