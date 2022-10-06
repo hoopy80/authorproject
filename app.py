@@ -20,14 +20,14 @@ class Author(db.Model):
 class Category(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     author = db.Column(db.String)
-    description = db.Column(db.String)
+    category = db.relationship('Author',backref='all_authors')
     author = db.Column(db.ForeignKey('author.id'))
     
      # DB Execution
 
 db.create_all()
-c1 = Author(id=1,name='Andrew Cartmel')
-c2 = Author(id=2,name='Peter Ackroyd')
+c1 = Author(id=1,name='Andrew Cartmel',)
+c2 = Author(id=2,name='Peter Ackroyd',)
 db.session.add(c1)
 db.session.add(c2)
 db.session.commit()
@@ -100,7 +100,16 @@ def home_fun():
 @app.route('/author/<int:id')
 def author_fun(id):
         author_object = Author.query.get(id)
-        return render_template("author.html",data=author_object)
+        return render_template("authors.html",data=author_object)
+
+@app.route('/home_url')
+def workex_fun():
+        return render_template("home.html")
+
+@app.route('/genres_url')
+def education_fun():
+	# processing
+        return render_template("genres.html")
 
 if __name__== '__main__': 
    app.run(debug=True,host='0.0.0.0',port=8000)
