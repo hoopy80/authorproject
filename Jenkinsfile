@@ -25,30 +25,3 @@ pipeline
 				sh 'python proj.py'
 			}
 		}
-	stage('Admin Approval') 
-		{
-            		steps 
-			{
-                		input "Does the staging environment look ok?"
-            		}
-     		}
-	}
-post 
-	{
-	success 
-		{
-			echo 'Build Successfull!!'
-		}
-	failure 
-		{
-			echo 'Sorry mate! build is Failed :('
-		}
-	unstable 
-		{
-			echo 'Run was marked as unstable'
-		}
-	changed 
-		{
-			echo 'Hey look at this, Pipeline state is changed.'
-		}
-	}
