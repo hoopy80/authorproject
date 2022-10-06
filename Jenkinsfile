@@ -10,7 +10,7 @@ pipeline
 			{
 				echo 'This is Build part'
 			
-				sh 'docker build . -t magyster/app_pete:1'
+				sh './build.sh'
 				
             		}
             	
